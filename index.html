@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-        content = "width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dulan Fernando</title>
         <link rel="stylesheet" href="style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -12,15 +11,12 @@
     <body>
         
         <header class="header">
-            <a href="#home" class="logo">Dulan
-            <span>Fernando</span></a>
-
+            <a href="#home" class="logo">Dulan <span>Fernando</span></a>
             <i class='bx bx-menu' id="menu-icon"></i>
-
             <nav class="navbar">
                 <a href="#home" class="active">Home</a>
                 <a href="#education">Education</a>
-                <a href="#testimonials">Projects</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
         </header>
@@ -28,159 +24,86 @@
         <section class="home" id="home">
             <div class="home-content">
                 <h1>Hi, It's <span>Dulan</span></h1>
-                <h3 class="text-animation">I'm<span></span></h3>
+                <h3 class="text-animation">I'm <span id="animated-text"></span></h3>
                 <p>Hello! I'm Dulan Fernando, a passionate Software Engineering student with a keen interest in game development
                     and machine learning. I love building innovative solutions that merge creativity with technology. Currently, 
-                    I'm  honing my skills in Java, Python, Spring Boot while working on real-world Projects.
-                    Explore my portfolio to see mt latest projects and innovations. Let's connect and create something amazing 
-                    together!</p>
-
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/dulan-fernando-650724267/"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://github.com/Dulan19"><i class='bx bxl-github'></i></a>
-                        <a href="https://www.instagram.com/kyanx_fernando/"><i class='bx bxl-instagram' ></i></a>
-                        <a href="https://discordapp.com/users/558865188422549525" target="_blank"><i class='bx bxl-discord' ></i></a>
-                    </div>
-
-                    <div class="btn-group">
-                        <a href="#" class="btn">Hire</a>
-                        <a href="#contact" class="btn">Contact</a>
-                    </div>
+                    I'm honing my skills in Java, Python, and Spring Boot while working on real-world projects.
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/dulan-fernando-650724267/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/Dulan19" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.instagram.com/kyanx_fernando/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://discordapp.com/users/558865188422549525" target="_blank"><i class='bx bxl-discord'></i></a>
                 </div>
-                    <div class="home-img">
-                        <img src="image.png" alt="">
-                    </div>
-        </section>
-
-        <section class="education" id="education">
-        <h2 class="heading">Education</h2>
-
-        <div class="timeline-items">
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2019</div>
-                    <div class="timeline-content">
-                        <h3>Ordinary Level (O/L)</h3>
-                        <p>Panadura Royal Coellege</p>
-                        <p>Ordinary Level - 2019</p>
-                        <p>Grades - 6A's, 2B's, 1C</p>
-                    </div>
-                
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023</div>
-                    <div class="timeline-content">
-                        <h3>High School Qualification</h3>
-                        <p>Panadura Royal Coellege</p>
-                        <p>Advanced Level - 2023</p>
-                        <p>Grades - 2S's (Mathematical Stream)</p>
-                        <p>Informatics Institute of Technology</p>
-                        <p>Half Foundation Certificate in Higher Education</p>
-                    </div>
-                
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">Present</div>
-                    <div class="timeline-content">
-                        <h3>University</h3>
-                        <p>Informatics Institute of Technology</p>
-                        <p>BEng (Hons) Software Engineering</p>
-                    </div>              
+                <div class="btn-group">
+                    <a href="#" class="btn">Hire</a>
+                    <a href="#contact" class="btn">Contact</a>
                 </div>
+            </div>
+            <div class="home-img">
+                <img src="image.png" alt="">
             </div>
         </section>
 
-        <section class="testimonials" id="testimonials">
-            <div class="testimonials-box">
-                <h2 class="heading">Projects</h2>
+        <script>
+        // Menu Toggle
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
 
-                <div class="wrapper">
-                    <div class="testimonials-item">
-                        <h2>Person Finance Tracker - Python</h2>
-                        <p>An Code Line Interface to keep of financial transactions using Python.
-                            Containing with easily accessible features
-                        </p>
-                    </div>
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
 
-                    <div class="testimonials-item">
-                        <h2>Student Management System - Java</h2>
-                        <p>Created a Student Management System using java, facilitating efficient
-                            handling of students records, grades and schedules
-                        </p>
-                    </div>
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+                if (top >= offset && top < offset + height) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']')?.classList.add('active');
+                    });
+                }
+            });
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
 
-                    <div class="testimonials-item">
-                        <h2>Created Website as a Group Project</h2>
-                        <p>Designed and developed a website using HTML, CSS and JavaScript to buy
-                            books and check further details and informations about quality education.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        // Typing Animation Fix
+        const typedText = ["a Software Engineer", "a Game Developer", "an ML Enthusiast"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let animatedText = document.getElementById("animated-text");
 
-        <section class="contact" id="contact">
-            <h2 class="heading">Contact <span>Me</span></h2>
+        function typeText() {
+            if (charIndex < typedText[textIndex].length) {
+                animatedText.textContent += typedText[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100);
+            } else {
+                setTimeout(eraseText, 1000);
+            }
+        }
 
-            <form action="">
-                <div class="input-group">
-                    <div class="input-box">
-                        <input type="text"
-                        placeholder="Full Name">
-                        <input type="email"
-                        placeholder="Email">
-                    </div>
-                    <div class="input-box">
-                        <input type="number"
-                        placeholder="Phone Number">
-                        <input type="text"
-                        placeholder="Subject">
-                    </div>
-                </div>
-
-                <div class="input-group-2">
-                    <textarea name="" id="" cols="30"
-                    rows="10" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send Message" class="btn">
-                </div>
-            </form>
-        </section>
+        function eraseText() {
+            if (charIndex > 0) {
+                animatedText.textContent = typedText[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseText, 50);
+            } else {
+                textIndex = (textIndex + 1) % typedText.length;
+                setTimeout(typeText, 500);
+            }
+        }
         
-        <footer class="footer">
-            <div class="social">
-                <a href="https://www.linkedin.com/in/dulan-fernando-650724267/"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/Dulan19"><i class='bx bxl-github'></i></a>
-                <a href="https://www.instagram.com/kyanx_fernando/"><i class='bx bxl-instagram' ></i></a>
-                <a href="https://discordapp.com/users/558865188422549525" target="_blank"><i class='bx bxl-discord' ></i></a>
-            </div>
-
-            <ul class="list">
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-
-                <li>
-                    <a href="#">About Me</a>
-                </li>
-
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-
-                <li>
-                    <a href="#">Projects</a>
-                </li>
-            </ul>
-            <p class="copyright">
-                © Dulan Fernando | All Right Reserved
-            </p>
-        </footer>
-
-        <script src="script.js"></script>
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeText, 500);
+        });
+        </script>
     </body>
 </html>
