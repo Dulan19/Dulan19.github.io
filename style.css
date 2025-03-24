@@ -210,6 +210,7 @@
      font-size: 34px;
      font-weight: 600;
      min-width: 280px;
+     min-height: 80px;
  }
  
  .text-animation span{
@@ -227,7 +228,7 @@
      background-color: var(--bg-color);
      position: absolute;
      width: calc(100% + 8px);
-     height: 100%;
+     height: 40px;
      border-left: 3px solid var(--bg-color);
      right: -8px;
      animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
@@ -246,7 +247,7 @@
      }
      21%,
      40%{
-         content: " Learning Backend Development";
+         content: " Learning Software Development";
      }
      41%,
      60%{
@@ -366,6 +367,7 @@
      box-shadow: 0 0 10px var(--main-color);
      cursor: pointer;
      transition: 0.3s ease-in-out;
+     min-width: 200px;
  }
  
  .timeline-content:hover{
@@ -584,10 +586,12 @@
          left: 7px;
      }
      .testimonials-item:nth-child(odd){
-         padding-right: 0;
          text-align: left;
      }
-     .timeline-item:nth-child(odd),
+     .timeline-item:nth-child(odd){
+        padding-left: 37px;
+        text-align: unset;
+     }
      .timeline-item:nth-child(even){
          padding-left: 37px;
      }
@@ -651,6 +655,9 @@
      }
      .home-img{
          width: 56vw;
+     }
+     .timeline-content {
+        padding: 30px 20px;
      }
  }
  
