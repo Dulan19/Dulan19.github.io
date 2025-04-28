@@ -1,0 +1,173 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulan Fernando</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="Portfolio.css">
+</head>
+<body>
+      <header class="header">
+        <a href="#home" class="logo">
+          <img src="logo.png" alt="Dulan Fernando Logo" class="logo-img">
+          Dulan <span>Fernando</span>
+        </a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#testimonials">Projects</a>
+            <a href="#education">Certifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+  <main>
+  <section class="hero">
+    <img src="background.jpg" alt="Background Image" class="background-image">
+    <div class="hero-text">
+      <h2>Hello!!</h2>
+      <h2> I'm <span>Dulan Fernando</span></h2>
+      <p>Aspiring Software Engineer</p>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/dulan-fernando-650724267/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/Dulan19" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://www.instagram.com/kyanx_fernando/" target="_blank"><i class='bx bxl-instagram' ></i></a>
+        <a href="https://discordapp.com/users/558865188422549525" target="_blank"><i class='bx bxl-discord' ></i></a>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="assets/Dulan_Fernando_CV.pdf" download class="btn">
+          <i class='bx bx-download'></i> Download CV
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class='bx bx-message-detail'></i> Contact Me
+        </a>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+      <div class="testimonials-box">
+      
+        <h2 class="heading"  >Projects</h2>
+          <div class="project-wrapper">
+            <div class="testimonials-item">
+              <h2>Fill Guard</h2>
+              <p>A complete group project where we created a website and an IoT device to monitor the bin fill level, Humidity, Location,
+                and Tempreture of waste bin. Once the bin fill level reaches 80% user will be notified via email and SMS.
+                The project aims to provide a solution for monitoring bin fill level and preventing overflow.
+                <p><a href="https://fill-guard.vercel.app/" target="_blank" class="Visit">View Site</a></p>
+              </p>
+            </div>
+
+            <div class="testimonials-item">
+                <h2>Personal Finance Tracker</h2>
+                <p>An Code Line Interface to keep of financial transactions using Python. Containing with 
+                  easily accessible features. To help users to manage their monthly expenses and income easily and effectively.
+                </p>
+            </div>
+
+            <div class="testimonials-item">
+                <h2>Student Management System</h2>
+                <p>A simple Student Management System using Python. It allows users to add, 
+                  update, delete and search for students. Additionaly update Student's marks and grades.
+                </p>
+            </div>
+
+            <div class="testimonials-item">
+                <h2>Scholars Website</h2>
+                <p>Designed and developed a Scholar website using HTML, CSS and JavaScript to buy
+                    books and check further details and informations about quality education which is one of the main sustainable 
+                    development goal.
+                </p>
+            </div>
+        </div>
+      </div>
+</section>
+
+  <section class="education" id="education">
+    <div class="education-box">
+        <h2 class="heading">Certifications</h2>
+
+        <h3>Professional certifications and courses I've completed to enhance my skills and knowledge </h3>
+      
+        <div class="wrapper">
+            <div class="education-item">
+              <h2>JavaScript Algorithms and Data Structures</h2>
+              <p>The freeCodeCamp JavaScript Algorithms and Data Structures v8 course teaches JavaScript fundamentals through hands-on 
+                projects.
+                Learners build skills in arrays, functions, objects, recursion, and modern methods</p>
+            </div>
+
+            <div class="education-item">
+                <h2>Programming Foundations: Object-Oriented Design</h2>
+                <p>The course "Programming Foundations: Object-Oriented Design" by Linkedin Learning teaches the basics of OOP principles 
+                  like classes, inheritance, and abstraction.It focuses on analyzing use cases, designing with UML diagrams, and translating 
+                  designs into real code for modular and scalable software development</p>
+            </div>
+
+            <div class="education-item">
+                <h2>Introduction to Web APIs</h2>
+                <p>The course "Introduction to Web APIs" from LinkedIn Learning teaches the basics of what APIs are, 
+                  how to connect to them, work with JSON, and handle 
+                  requests and errors.
+                  It also introduces using parameters, API documentation, and gives a quick start on GraphQL basics</p>
+            </div>
+
+            <div class="education-item">
+              <h2>Learning Java 11</h2>
+              <p>Learning Java 11 from LinkedIn Learning. This course covers basic Java programming concepts like data 
+                types, strings, functions, loops, flow control, debugging, and includes real-world examples and coding challenges</p>
+            </div>
+
+            <div class="education-item">
+                <h2>Introduction to Web Design and Development</h2>
+                <p>The course "Introduction to Web Design and Development" from LinkedIn Learning covers the basics of how websites 
+                  work, planning and prototyping, and using HTML, CSS, and JavaScript.
+                  It also touches on UX/UI design and tools for building websites, even without coding</p>
+            </div>
+          </div>
+    </div>
+
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <div class="contact-image">
+          <img src="contact.jpg" alt="Contact Me Image">
+        </div>
+    
+        <div class="contact-form">
+          <h2>Get <span>In Touch</span></h2>
+          <form action="https://formspree.io/f/xrbqbrda" method="POST">
+            <div class="input-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 Dulan Fernando. All rights reserved.</p>
+        <div class="footer-icons">
+          <a href="https://www.linkedin.com/in/dulan-fernando-650724267/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com/Dulan19" target="_blank"><i class='bx bxl-github'></i></a>
+          <a href="https://www.instagram.com/kyanx_fernando/" target="_blank"><i class='bx bxl-instagram'></i></a>
+          <a href="https://discordapp.com/users/558865188422549525" target="_blank"><i class='bx bxl-discord'></i></a>
+        </div>
+      </div>
+    </footer>
+
+  <script src="Portfolio.js"></script>
+</body>
+</html>
