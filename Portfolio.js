@@ -153,6 +153,9 @@ function parseCertificationData() {
         } else if (title.includes('Java')) {
             organization = 'LinkedIn Learning';
             year = '2024';
+        } else if (title.includes('SQL')) {
+            organization = 'LinkedIn Learning';
+            year = '2025'; 
         } else if (title.includes('HTML')) {
             organization = 'LinkedIn Learning';
             year = '2024';
