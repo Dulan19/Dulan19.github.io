@@ -36,7 +36,7 @@ body {
 }
 
 * {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><circle cx="8" cy="8" r="6" fill="black"/></svg>') 8 8, auto;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="rgba(255,255,255,0.8)" stroke="rgba(0,0,0,0.8)" stroke-width="2"/></svg>') 10 10, auto;
 }
 
 body > main {
