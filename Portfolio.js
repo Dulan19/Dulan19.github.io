@@ -150,16 +150,16 @@ function parseCertificationData() {
         if (title.includes('JavaScript')) {
             organization = 'FreeCodeCamp';
             year = 'Present';
-        } else if (title.includes('Java')) {
+        }  else if (title.includes('Learning SQL')) {
+            organization = 'LinkedIn Learning';
+            year = '2025'; 
+        }  else if (title.includes('Java')) {
             organization = 'LinkedIn Learning';
             year = '2024';
         }  else if (title.includes('HTML')) {
             organization = 'LinkedIn Learning';
             year = '2024';
-        } else if (title.includes('Learning SQL')) {
-            organization = 'LinkedIn Learning';
-            year = '2025';    
-        } else if (title.includes('CSS')) {
+        }  else if (title.includes('CSS')) {
             organization = 'LinkedIn Learning';
             year = '2024';
         } else if (title.includes('Python')) {
@@ -204,7 +204,7 @@ function parseCertificationData() {
             tags.push('Java', 'Programming');
         } else if (title.includes('Object-Oriented')) {
             tags.push('OOP', 'Design', 'Programming');
-        } else if (title.inclues('Learning SQL')) {
+        } else if (title.includes('Learning SQL')) {
             tags.push('SQL', 'DataBase', 'Backend');
         } else if (title.includes('Web APIs')) {
             tags.push('API', 'Web Development', 'REST');
