@@ -165,8 +165,7 @@ function parseCertificationData() {
         } else if (title.includes('Python')) {
             organization = 'LinkedIn Learning';
             year = '2025';
-        } 
-        else if (title.includes('Object-Oriented')) {
+        } else if (title.includes('Object-Oriented')) {
             organization = 'LinkedIn Learning';
             year = '2025';
         } else if (title.includes('Web APIs')) {
@@ -175,6 +174,9 @@ function parseCertificationData() {
         } else if (title.includes('Web Design')) {
             organization = 'LinkedIn Learning';
             year = '2024';
+        } else if (title.includes('Management')) {
+            organization = 'LinkedIn Learning';
+            year = '2025';
         }
         
         const orgElement = document.createElement('div');
