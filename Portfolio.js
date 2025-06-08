@@ -208,6 +208,8 @@ function parseCertificationData() {
             tags.push('SQL', 'DataBase', 'Backend');
         } else if (title.includes('Web APIs')) {
             tags.push('API', 'Web Development', 'REST');
+        } else if (title.includes('Management')) { 
+            tags.push('Project Management', 'Leadership');
         } else if (title.includes('Web Design')) {
             tags.push('HTML', 'CSS', 'Web Design');
         }
