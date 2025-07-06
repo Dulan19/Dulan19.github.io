@@ -177,7 +177,10 @@ function parseCertificationData() {
         } else if (title.includes('Management')) {
             organization = 'LinkedIn Learning';
             year = '2025';
-        }
+        } else if (title.includes('Agile')) {
+            organization = 'LinkedIn Learning';
+            year = '2025';
+        } 
         
         const orgElement = document.createElement('div');
         orgElement.className = 'org-info';
@@ -214,6 +217,8 @@ function parseCertificationData() {
             tags.push('Project Management', 'Leadership');
         } else if (title.includes('Web Design')) {
             tags.push('HTML', 'CSS', 'Web Design');
+        } else if (title.includes('Agile')) {
+            tags.push('Agile Project Management', 'Agile Methodologies');
         }
         
         tags.forEach(tag => {
