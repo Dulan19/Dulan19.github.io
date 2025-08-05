@@ -10,6 +10,26 @@ menuIcon.addEventListener('click', () => {
     navbar.classList.toggle('active'); 
 });  
 
+// Function to handle smooth scrolling and active state
+function scrollToSection(targetId) {
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+        window.scrollTo({
+            top: targetSection.offsetTop - 100, // Adjust for header height
+            behavior: 'smooth'
+        });
+        
+        // Update active class
+        navbarLinks.forEach(link => {
+            if (link.getAttribute('href') === targetId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Function to scroll to top
 function scrollToTop() {
     window.scrollTo({
@@ -31,12 +51,6 @@ function scrollToTop() {
 logo.addEventListener('click', (e) => {
     e.preventDefault();
     scrollToTop();
-});
-
-// Special handling for home link
-homeLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    scrollToTop();
     
     // Close mobile menu if open
     if (window.innerWidth <= 991) {             
@@ -44,32 +58,16 @@ homeLink.addEventListener('click', (e) => {
     }
 });
 
-// Close navbar when a link is clicked on mobile 
+// Add click events to navbar links
 navbarLinks.forEach(link => {     
     link.addEventListener('click', (e) => {
-        // Skip the home link as it's handled separately
-        if (link.getAttribute('href') === '#home') {
-            return;
-        }
-        
         e.preventDefault();
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
         
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop,
-                behavior: 'smooth'
-            });
-            
-            // Update active class
-            navbarLinks.forEach(navLink => {
-                if (navLink === link) {
-                    navLink.classList.add('active');
-                } else {
-                    navLink.classList.remove('active');
-                }
-            });
+        if (targetId === '#home') {
+            scrollToTop();
+        } else {
+            scrollToSection(targetId);
         }
         
         // Close mobile menu if open
@@ -150,22 +148,20 @@ function parseCertificationData() {
         if (title.includes('JavaScript')) {
             organization = 'FreeCodeCamp';
             year = 'Present';
-        }  else if (title.includes('Learning SQL')) {
-            organization = 'LinkedIn Learning';
-            year = '2025'; 
-        }  else if (title.includes('Java')) {
+        } else if (title.includes('Java')) {
             organization = 'LinkedIn Learning';
             year = '2024';
-        }  else if (title.includes('HTML')) {
+        } else if (title.includes('HTML')) {
             organization = 'LinkedIn Learning';
             year = '2024';
-        }  else if (title.includes('CSS')) {
+        } else if (title.includes('CSS')) {
             organization = 'LinkedIn Learning';
             year = '2024';
         } else if (title.includes('Python')) {
             organization = 'LinkedIn Learning';
             year = '2025';
-        } else if (title.includes('Object-Oriented')) {
+        } 
+        else if (title.includes('Object-Oriented')) {
             organization = 'LinkedIn Learning';
             year = '2025';
         } else if (title.includes('Web APIs')) {
@@ -174,13 +170,7 @@ function parseCertificationData() {
         } else if (title.includes('Web Design')) {
             organization = 'LinkedIn Learning';
             year = '2024';
-        } else if (title.includes('Management')) {
-            organization = 'LinkedIn Learning';
-            year = '2025';
-        } else if (title.includes('Agile')) {
-            organization = 'LinkedIn Learning';
-            year = '2025';
-        } 
+        }
         
         const orgElement = document.createElement('div');
         orgElement.className = 'org-info';
@@ -209,16 +199,10 @@ function parseCertificationData() {
             tags.push('Java', 'Programming');
         } else if (title.includes('Object-Oriented')) {
             tags.push('OOP', 'Design', 'Programming');
-        } else if (title.includes('Learning SQL')) {
-            tags.push('SQL', 'DataBase', 'Backend');
         } else if (title.includes('Web APIs')) {
             tags.push('API', 'Web Development', 'REST');
-        } else if (title.includes('Management')) { 
-            tags.push('Project Management', 'Leadership');
         } else if (title.includes('Web Design')) {
             tags.push('HTML', 'CSS', 'Web Design');
-        } else if (title.includes('Agile')) {
-            tags.push('Agile Project Management', 'Agile Methodologies');
         }
         
         tags.forEach(tag => {
