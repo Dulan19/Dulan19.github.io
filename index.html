@@ -6,9 +6,12 @@
     <title>Dulan Fernando - Portfolio</title>
     <link rel="stylesheet" href="Portfolio.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
     <header class="header">
         <a href="#home" class="logo">
             <img src="logo.png" alt="Logo">
@@ -21,6 +24,9 @@
             <a href="#education">Certifications</a>
             <a href="#contact">Contact</a>
         </nav>
+        <button class="theme-toggle" id="theme-toggle">
+            <i class='bx bx-moon'></i>
+        </button>
     </header>
 
     <main>
@@ -29,10 +35,10 @@
             <div class="hero-text">
                 <h2>Hello!! I'm <span>Dulan Fernando</span></h2>
                 <p>Aspiring Software Engineer</p>
-                    <div class="hero-buttons">
-                        <a href="https://drive.google.com/uc?export=download&id=1LXoJixpnmPZ3SIbQ-XGrYlWM8-y2lj6W" class="btn" target="_blank" rel="noopener noreferrer"><i class='bx bx-file'></i>View CV</a>
-                        <a href="#contact" class="btn btn-outline"><i class='bx bx-envelope'></i>Contact Me</a>
-                    </div>  
+                <div class="hero-buttons">
+                    <a href="https://drive.google.com/uc?export=download&id=1LXoJixpnmPZ3SIbQ-XGrYlWM8-y2lj6W" class="btn" target="_blank" rel="noopener noreferrer"><i class='bx bx-file'></i>View CV</a>
+                    <a href="#contact" class="btn btn-outline"><i class='bx bx-envelope'></i>Contact Me</a>
+                </div>
                 <div class="social-icons">
                     <a href="https://github.com/dulanfernando"><i class='bx bxl-github'></i></a>
                     <a href="https://linkedin.com/in/dulanfernando"><i class='bx bxl-linkedin'></i></a>
@@ -200,7 +206,7 @@
         <section class="contact" id="contact">
             <div class="contact-container">
                 <div class="contact-image">
-                    <img src="contact.jpg" alt="Contact Image">
+                    <img src="contact-image.jpg" alt="Contact Image">
                 </div>
                 <div class="contact-form">
                     <h2>Get In <span>Touch</span></h2>
@@ -228,6 +234,10 @@
             </div>
         </div>
     </footer>
+
+    <button class="scroll-top" id="scroll-top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
 
     <script src="Portfolio.js"></script>
 </body>
