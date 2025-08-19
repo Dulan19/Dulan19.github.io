@@ -4,12 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const navbarLinks = document.querySelectorAll('.navbar a');
     const logo = document.querySelector('.logo');
+    const themeToggle = document.getElementById('theme-toggle');
+    const scrollTopBtn = document.getElementById('scroll-top');
+    const preloader = document.querySelector('.preloader');
 
     // Error handling for DOM elements
-    if (!menuIcon || !navbar || !navbarLinks.length || !logo) {
+    if (!menuIcon || !navbar || !navbarLinks.length || !logo || !themeToggle || !scrollTopBtn || !preloader) {
         console.error('One or more DOM elements not found');
         return;
     }
+
+    // Hide preloader after page load
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 1000);
+    });
 
     // Toggle navbar visibility when the menu icon is clicked
     menuIcon.addEventListener('click', () => {
@@ -105,6 +115,24 @@ document.addEventListener('DOMContentLoaded', () => {
         navbarLinks.forEach(link => {
             link.classList.toggle('active', link.getAttribute('href') === currentSection.id);
         });
+
+        // Show/hide scroll-to-top button
+        if (scrollPosition > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top button click event
+    scrollTopBtn.addEventListener('click', scrollToTop);
+
+    // Theme toggle
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLightMode = document.body.classList.contains('light-mode');
+        themeToggle.querySelector('i').classList.toggle('bx-moon', !isLightMode);
+        themeToggle.querySelector('i').classList.toggle('bx-sun', isLightMode);
     });
 
     // Parse certification data
