@@ -1,308 +1,234 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dulan Fernando</title>
-  <link rel="icon" type="image/x-icon" href="logo.png">
-  <link rel="stylesheet" href="Portfolio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulan Fernando - Portfolio</title>
+    <link rel="stylesheet" href="Portfolio.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-      <header class="header">
+    <header class="header">
         <a href="#home" class="logo">
-          <img src="logo.png" alt="Dulan Fernando Logo" class="logo-img">
-          Dulan <span>Fernando</span>
+            <img src="logo.png" alt="Logo">
+            <span>Dulan Fernando</span>
         </a>
-
         <i class='bx bx-menu' id="menu-icon"></i>
-
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#testimonials">Projects</a>
+            <a href="#projects">Projects</a>
             <a href="#education">Certifications</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-  <main>
-  <section class="hero" id="home">
-    <img src="background.jpg" alt="Background Image" class="background-image">
-    <div class="hero-text">
-      <h2>Hello!!</h2>
-      <h2> I'm <span>Dulan Fernando</span></h2>
-      <p>Aspiring Software Engineer</p>
-
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/dulan-fernando-650724267/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://github.com/Dulan19" target="_blank"><i class='bx bxl-github'></i></a>
-        <a href="https://www.instagram.com/kyanx_fernando/" target="_blank"><i class='bx bxl-instagram' ></i></a>
-        <a href="https://discordapp.com/users/558865188422549525" target="_blank"><i class='bx bxl-discord' ></i></a>
-      </div>
-
-      <div class="hero-buttons">
-        <a href="https://drive.google.com/file/d/1qga9RHWeBydtf1ACuzXKeXAwT1ERl0Ay/view?usp=drive_link" download class="btn">
-          <i class='bx bx-download'></i> View CV
-        </a>
-        <a href="#contact" class="btn btn-outline">
-          <i class='bx bx-message-detail'></i> Contact Me
-        </a>
-      </div>
-      
-    </div>
-  </section>
-
-  <section class="projects-section" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Showcasing my passion for creating innovative solutions through code</p>
+    <main>
+        <section class="hero" id="home">
+            <img src="background.jpg" alt="Background" class="background-image">
+            <div class="hero-text">
+                <h2>Hello!! I'm <span>Dulan Fernando</span></h2>
+                <p>Aspiring Software Engineer</p>
+                <div class="hero-buttons">
+                    <a href="cv.pdf" class="btn"><i class='bx bx-file'></i>View CV</a>
+                    <a href="#contact" class="btn btn-outline"><i class='bx bx-envelope'></i>Contact Me</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/dulanfernando"><i class='bx bxl-github'></i></a>
+                    <a href="https://linkedin.com/in/dulanfernando"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://discord.com/users/dulanfernando"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://instagram.com/dulanfernando"><i class='bx bxl-instagram'></i></a>
+                </div>
             </div>
+        </section>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">TC</div>
-                        <h3 class="project-title">Tudawe Child Development Centre</h3>
-                        <p class="project-description">
-                            A comprehensive website for Tudawe Home, featuring mission information, events, achievements, and donation capabilities to enhance transparency and community engagement.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Web Development</span>
-                            <span class="project-tag">Real-time Project</span>
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Showcasing my passion for creating innovative solutions through code</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">TC</div>
+                            <h3 class="project-title">Tudawe Child Development Centre</h3>
+                            <p class="project-description">A comprehensive website for Tudawe Home, featuring mission information, events, achievements, and donation capabilities to enhance transparency and community engagement.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Web Development</span>
+                                <span class="project-tag">Real-time Project</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="https://github.com/tudawe-project" class="project-link primary"><i class='bx bxl-github'></i>View Repository</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <div class="project-links">
-                            <a href="https://github.com/Dulan19/Thudawa_Website.git" target="_blank" class="project-link primary">
-                                View Repository
-                            </a>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">FG</div>
+                            <h3 class="project-title">Fill Guard</h3>
+                            <p class="project-description">IoT-enabled smart waste management system monitoring bin fill levels, humidity, location, and temperature with automated email and SMS notifications at 80% capacity.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">IoT</span>
+                                <span class="project-tag">Web Development</span>
+                                <span class="project-tag">Real-time Project</span>
+                                <span class="project-tag">Team Project</span>
+                            </div>
                         </div>
-                        <div class="project-stats">
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="https://fillguard.live" class="project-link primary"><i class='bx bx-globe'></i>View Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">HM</div>
+                            <h3 class="project-title">Hotel Management System</h3>
+                            <p class="project-description">Created a Hotel Management System using Java, Object-Oriented Programming. This system uses CRUD operations to manage hotel staff records.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Java</span>
+                                <span class="project-tag">OOP Concepts</span>
+                                <span class="project-tag">CRUD</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="https://github.com/hotel-management" class="project-link primary"><i class='bx bxl-github'></i>View Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">SM</div>
+                            <h3 class="project-title">Student Management System</h3>
+                            <p class="project-description">Created a Student Management System using Java. Facilitates efficient handling of student records, grades, and schedules using CRUD operations.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Java</span>
+                                <span class="project-tag">CRUD</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="https://github.com/student-management" class="project-link primary"><i class='bx bxl-github'></i>View Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">FT</div>
+                            <h3 class="project-title">Personal Finance Tracker</h3>
+                            <p class="project-description">Command-line interface application built with Python for tracking financial transactions, helping users manage monthly expenses and income effectively.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">CLI</span>
+                                <span class="project-tag">Finance</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="https://github.com/finance-tracker" class="project-link primary"><i class='bx bxl-github'></i>View Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">SW</div>
+                            <h3 class="project-title">Scholars Website</h3>
+                            <p class="project-description">Educational platform built with HTML, CSS, and JavaScript for book purchases and educational resources, supporting UN Sustainable Development Goal for quality education.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML/CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="https://scholars-website.live" class="project-link primary"><i class='bx bx-globe'></i>View Live Site</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">FG </div>
-                        <h3 class="project-title">Fill Guard</h3>
-                        <p class="project-description">
-                            IoT-enabled smart waste management system monitoring bin fill levels, humidity, location, and temperature with automated email and SMS notifications at 80% capacity.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">IoT</span>
-                            <span class="project-tag">Web Development</span>
-                            <span class="project-tag">Real-time Project</span>
-                            <span class="project-tag">Team Project</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-links">
-                            <a href="https://fill-guard.vercel.app/" target="_blank" class="project-link primary">
-                                View Live Site
-                            </a>
-                        </div>
-                        <div class="project-stats">
-                        </div>
-                    </div>
-                </div> 
-
-                <div class="project-card">
-                  <div class="project-header">
-                      <div class="project-icon">HM </div>
-                      <h3 class="project-title">Hotel Management System</h3>
-                      <p class="project-description">
-                        Created a Hotel Management System using Java, Object Oriented Programming. This system is using CRUD operations to manage hotel staff records
-                      </p>
-                      <div class="project-tags">
-                          <span class="project-tag">github</span>
-                          <span class="project-tag">Java</span>
-                          <span class="project-tag">OOP Concepts</span>
-                      </div>
-                  </div>
-                  <div class="project-footer">
-                      <div class="project-links">
-                          <a href="https://github.com/Dulan19/Hotel-Management-System#" target="_blank" class="project-link primary">
-                              View Repository
-                          </a>
-                      </div>
-                      <div class="project-stats">
-                      </div>
-                  </div>
-              </div> 
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">SM</div>
-                        <h3 class="project-title">Student Management System</h3>
-                        <p class="project-description">
-                            Created a Student Management System using java. Facilitating efficient handling of student records, 
-                            grades and schedule. This system is using CRUD operations to manage student records and grades
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Java</span>
-                            <span class="project-tag">CRUD</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-links">
-                            <!-- <a href="h" target="_blank" class="project-link primary">
-                                Repository Link will Update soon
-                            </a> -->
-                        </div>
-                        <div class="project-stats">
-                        </div>
-                    </div>
-                </div>                 
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">FT</div>
-                        <h3 class="project-title">Personal Finance Tracker</h3>
-                        <p class="project-description">
-                           Command-line interface application built with Python for tracking financial transactions, helping users manage monthly expenses and income effectively.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">CLI</span>
-                            <span class="project-tag">Finance</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-links">
-                            <!-- <a href="h" target="_blank" class="project-link primary">
-                                Repository Link will Update soon
-                            </a> -->
-                        </div>
-                        <div class="project-stats">
-                        </div>
-                    </div>
-                </div> 
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">SW</div>
-                        <h3 class="project-title">Scholars Website</h3>
-                        <p class="project-description">
-                           Educational platform built with HTML, CSS, and JavaScript for book purchases and educational resources, supporting UN Sustainable Development Goal for quality education.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">HTML/CSS</span>
-                            <span class="project-tag">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-links">
-                            <!-- <a href="h" target="_blank" class="project-link primary">
-                                Repository Link will Update soon
-                            </a> -->
-                        </div>
-                        <div class="project-stats">
-                        </div>
-                    </div>
-                </div> 
             </div>
-        </div>
-    </section>
+        </section>
 
-  <section class="education" id="education">
-    <div class="education-box">
-        <h2 class="heading">Certifications</h2>
-
-        <h3>Professional certifications and courses I've completed to enhance my skills and knowledge </h3>
-      
-        <div class="wrapper">
-            <div class="education-item">
-              <h2>JavaScript Algorithms and Data Structures</h2>
-              <p>The freeCodeCamp JavaScript Algorithms and Data Structures v8 course teaches JavaScript fundamentals through hands-on 
-                projects.
-                Learners build skills in arrays, functions, objects, recursion, and modern methods</p>
+        <section class="education" id="education">
+            <h3 class="heading">Certifications <span></span></h3>
+            <p>Professional certifications and courses I've completed to enhance my skills and knowledge</p>
+            <div class="wrapper">
+                <div class="education-item">
+                    <h2>JavaScript Algorithms and Data Structures</h2>
+                    <p>The freeCodeCamp JavaScript Algorithms and Data Structures v8 course teaches JavaScript fundamentals through hands-on projects. Learners build skills in arrays, functions, objects, recursion, and modern methods.</p>
+                </div>
+                <div class="education-item">
+                    <h2>Programming Foundations: Object-Oriented Design</h2>
+                    <p>The course "Programming Foundations: Object-Oriented Design" by LinkedIn Learning teaches the basics of OOP principles like classes, inheritance, and abstraction. It focuses on analyzing use cases, designing with UML diagrams, and translating designs into real code for modular and scalable software development.</p>
+                </div>
+                <div class="education-item">
+                    <h2>Introduction to Web APIs</h2>
+                    <p>The course "Introduction to Web APIs" from LinkedIn Learning covers the fundamentals of web APIs, including RESTful services, HTTP methods, and integrating APIs into applications.</p>
+                </div>
+                <div class="education-item">
+                    <h2>Agile Foundations</h2>
+                    <p>The course “Agile Foundations” from LinkedIn Learning introduces the core principles of Agile methodologies, including iterative development, team collaboration, and effective project management practices to deliver value quickly and efficiently.</p>
+                </div>
+                <div class="education-item">
+                    <h2>Learning SQL Programming</h2>
+                    <p>This course provides a foundational understanding of SQL, covering key concepts such as data querying, filtering, sorting, joins, and aggregation. It introduces the use of SQL in real-world scenarios, working with relational databases, and writing efficient queries.</p>
+                </div>
+                <div class="education-item">
+                    <h2>Project Management Skills for Leaders</h2>
+                    <p>Completed a concise course focused on core project management principles for leadership roles. Gained key insights into effective team coordination, strategic planning, and decision-making techniques essential for leading successful projects.</p>
+                </div>
+                <div class="education-item">
+                    <h2>Learning Java 11</h2>
+                    <p>Learning Java 11 from LinkedIn Learning. This course covers basic Java programming concepts like data types, strings, functions, loops, flow control, debugging, and includes real-world examples and coding challenges.</p>
+                </div>
+                <div class="education-item">
+                    <h2>Introduction to Web Design and Development</h2>
+                    <p>The course "Introduction to Web Design and Development" from LinkedIn Learning covers the basics of how websites work, planning and prototyping, and using HTML, CSS, and JavaScript. It also touches on UX/UI design and tools for building websites, even without coding.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="education-item">
-                <h2>Programming Foundations: Object-Oriented Design</h2>
-                <p>The course "Programming Foundations: Object-Oriented Design" by Linkedin Learning teaches the basics of OOP principles 
-                  like classes, inheritance, and abstraction.It focuses on analyzing use cases, designing with UML diagrams, and translating 
-                  designs into real code for modular and scalable software development</p>
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="contact-image">
+                    <img src="contact.jpg" alt="Contact Image">
+                </div>
+                <div class="contact-form">
+                    <h2>Get In <span>Touch</span></h2>
+                    <form action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="input-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
-
-            <div class="education-item">
-                <h2>Introduction to Web APIs</h2>
-                <p>The course “Agile Foundations” from LinkedIn Learning introduces the core principles of Agile methodologies, including 
-                  iterative development, team collaboration, and effective project management practices to deliver value quickly and 
-                  efficiently</p>
-            </div>
-
-            <div class="education-item">
-              <h2>Agile Foundation</h2>
-              <p>The course “Agile Foundations” from LinkedIn Learning introduces the core principles of Agile methodologies, 
-                including iterative development, team collaboration, and effective project management practices to deliver value 
-                quickly and efficiently.</p>
-            </div>
-
-            <div class="education-item">
-              <h2>Learning SQL Programming</h2>
-              <p>This course provides a foundational understanding of SQL, covering key concepts such as data querying, filtering, sorting, joins, and aggregation.
-                It introduces the use of SQL in real-world scenarios, working with relational databases, and writing efficient queries.</p>
-            </div>
-
-            <div class="education-item">
-                <h2>Project Management Skills for Leaders</h2>
-                <p>Completed a concise course focused on core project management principles for leadership roles. 
-                  Gained key insights into effective team coordination, 
-                  strategic planning, and decision-making techniques essential for leading successful projects</p>
-            </div>
-
-            <div class="education-item">
-              <h2>Learning Java 11</h2>
-              <p>Learning Java 11 from LinkedIn Learning. This course covers basic Java programming concepts like data 
-                types, strings, functions, loops, flow control, debugging, and includes real-world examples and coding challenges</p>
-            </div>
-
-            <div class="education-item">
-                <h2>Introduction to Web Design and Development</h2>
-                <p>The course "Introduction to Web Design and Development" from LinkedIn Learning covers the basics of how websites 
-                  work, planning and prototyping, and using HTML, CSS, and JavaScript.
-                  It also touches on UX/UI design and tools for building websites, even without coding</p>
-            </div>
-          </div>
-    </div>
-  </section>
-
-    <section class="contact" id="contact">
-      <div class="contact-container">
-        <div class="contact-image">
-          <img src="contact.jpg" alt="Contact Me Image">
-        </div>
-    
-        <div class="contact-form">
-          <h2>Get <span>In Touch</span></h2>
-          <form action="https://formspree.io/f/xrbqbrda" method="POST">
-            <div class="input-group">
-              <input type="text" name="name" placeholder="Your Name" required>
-              <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
+        </section>
+    </main>
 
     <footer class="footer">
-      <div class="footer-content">
-        <p>© 2025 Dulan Fernando. All rights reserved.</p>
-        <div class="footer-icons">
-          <a href="https://www.linkedin.com/in/dulan-fernando-650724267/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-          <a href="https://github.com/Dulan19" target="_blank"><i class='bx bxl-github'></i></a>
-          <a href="https://www.instagram.com/kyanx_fernando/" target="_blank"><i class='bx bxl-instagram'></i></a>
-          <a href="https://discordapp.com/users/558865188422549525" target="_blank"><i class='bx bxl-discord'></i></a>
+        <div class="footer-content">
+            <p>© 2025 Dulan Fernando. All rights reserved.</p>
+            <div class="footer-icons">
+                <a href="https://github.com/dulanfernando"><i class='bx bxl-github'></i></a>
+                <a href="https://linkedin.com/in/dulanfernando"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://discord.com/users/dulanfernando"><i class='bx bxl-discord-alt'></i></a>
+                <a href="https://instagram.com/dulanfernando"><i class='bx bxl-instagram'></i></a>
+            </div>
         </div>
-      </div>
     </footer>
 
-  <script src="Portfolio.js"></script>
+    <script src="Portfolio.js"></script>
 </body>
 </html>
