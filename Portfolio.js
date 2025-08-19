@@ -72,27 +72,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add active class to navbar links based on scroll position
     window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY + 100;
-        const sections = Array.from(navbarLinks)
-            .map(link => {
-                const sectionId = link.getAttribute('href');
-                if (sectionId.startsWith('#')) {
-                    const section = document.querySelector(sectionId);
-                    return section ? {
-                        id: sectionId,
-                        top: section.offsetTop,
-                        bottom: section.offsetTop + section.offsetHeight
-                    } : null;
-                }
-                return null;
-            })
-            .filter(section => section);
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
 
-        sections.sort((a, b) => a.top - b.top);
-        navbarLinks.forEach(link => link.classList.remove('active'));
+        // Define sections with their corresponding IDs
+        const sections = [
+            { id: '#home', element: document.querySelector('#home') },
+            { id: '#projects', element: document.querySelector('#projects') },
+            { id: '#education', element: document.querySelector('#education') },
+            { id: '#contact', element: document.querySelector('#contact') }
+        ].filter(section => section.element);
 
-        let activeSection = sections.find(section => scrollPosition >= section.top - 200) || { id: '#home' };
-        document.querySelector(`.navbar a[href="${activeSection.id}"]`).classList.add('active');
+        // Find the current section based on scroll position
+        let currentSection = { id: '#home' }; // Default to home
+        sections.forEach(section => {
+            const sectionTop = section.element.offsetTop - 120; // Adjust for navbar height
+            const sectionBottom = sectionTop + section.element.offsetHeight;
+
+            // Check if scroll position is within the section
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                currentSection = section;
+            }
+        });
+
+        // Special case for the bottom of the page (Contact section)
+        if (scrollPosition + windowHeight >= documentHeight - 50) {
+            currentSection = sections.find(section => section.id === '#contact') || currentSection;
+        }
+
+        // Update active class
+        navbarLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === currentSection.id);
+        });
     });
 
     // Parse certification data
