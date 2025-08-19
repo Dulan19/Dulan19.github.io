@@ -1,231 +1,187 @@
-// Get elements from the DOM 
-const menuIcon = document.getElementById('menu-icon'); 
-const navbar = document.querySelector('.navbar'); 
-const navbarLinks = document.querySelectorAll('.navbar a');  
-const logo = document.querySelector('.logo');
-const homeLink = document.querySelector('.navbar a[href="#home"]');
+document.addEventListener('DOMContentLoaded', () => {
+    // Get elements from the DOM
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+    const navbarLinks = document.querySelectorAll('.navbar a');
+    const logo = document.querySelector('.logo');
 
-// Toggle navbar visibility when the menu icon is clicked 
-menuIcon.addEventListener('click', () => {     
-    navbar.classList.toggle('active'); 
-});  
+    // Error handling for DOM elements
+    if (!menuIcon || !navbar || !navbarLinks.length || !logo) {
+        console.error('One or more DOM elements not found');
+        return;
+    }
 
-// Function to handle smooth scrolling and active state
-function scrollToSection(targetId) {
-    const targetSection = document.querySelector(targetId);
-    if (targetSection) {
+    // Toggle navbar visibility when the menu icon is clicked
+    menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Function to handle smooth scrolling and active state
+    function scrollToSection(targetId) {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 100,
+                behavior: 'smooth'
+            });
+
+            // Update active class
+            navbarLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === targetId);
+            });
+        }
+    }
+
+    // Function to scroll to top
+    function scrollToTop() {
         window.scrollTo({
-            top: targetSection.offsetTop - 100, // Adjust for header height
+            top: 0,
             behavior: 'smooth'
         });
-        
-        // Update active class
+
+        // Update active state in navbar to home
         navbarLinks.forEach(link => {
-            if (link.getAttribute('href') === targetId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
+            link.classList.toggle('active', link.getAttribute('href') === '#home');
         });
     }
-}
 
-// Function to scroll to top
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-    
-    // Update active state in navbar to home
-    navbarLinks.forEach(link => {
-        if (link.getAttribute('href') === '#home') {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-}
-
-// Add click event to logo to navigate to home section
-logo.addEventListener('click', (e) => {
-    e.preventDefault();
-    scrollToTop();
-    
-    // Close mobile menu if open
-    if (window.innerWidth <= 991) {             
-        navbar.classList.remove('active');         
-    }
-});
-
-// Add click events to navbar links
-navbarLinks.forEach(link => {     
-    link.addEventListener('click', (e) => {
+    // Add click event to logo
+    logo.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetId = link.getAttribute('href');
-        
-        if (targetId === '#home') {
-            scrollToTop();
-        } else {
-            scrollToSection(targetId);
+        scrollToTop();
+        if (window.innerWidth <= 991) {
+            navbar.classList.remove('active');
         }
-        
-        // Close mobile menu if open
-        if (window.innerWidth <= 991) {             
-            navbar.classList.remove('active');         
-        }
-    }); 
-});  
+    });
 
-// Add active class to navbar links based on the scroll position 
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + 100;
-    
-    // Get all sections
-    const sections = [];
+    // Add click events to navbar links
     navbarLinks.forEach(link => {
-        const sectionId = link.getAttribute('href');
-        if (sectionId.startsWith('#')) {
-            const section = document.querySelector(sectionId);
-            if (section) {
-                sections.push({
-                    id: sectionId,
-                    element: section,
-                    top: section.offsetTop,
-                    bottom: section.offsetTop + section.offsetHeight
-                });
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            if (targetId === '#home') {
+                scrollToTop();
+            } else {
+                scrollToSection(targetId);
             }
-        }
-    });
-    
-    // Sort sections by position (top to bottom)
-    sections.sort((a, b) => a.top - b.top);
-    
-    // Remove active class from all links
-    navbarLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-    
-    // Find the active section based on scroll position
-    let activeSection = null;
-    for (let i = sections.length - 1; i >= 0; i--) {
-        if (scrollPosition >= sections[i].top - 200) {
-            activeSection = sections[i].id;
-            break;
-        }
-    }
-    
-    // Add active class to the corresponding link
-    if (activeSection) {
-        document.querySelector(`.navbar a[href="${activeSection}"]`).classList.add('active');
-    } else {
-        // Default to home
-        document.querySelector('.navbar a[href="#home"]').classList.add('active');
-    }
-});
-
-// Parse the certification data from HTML structure
-function parseCertificationData() {
-    const certificationItems = document.querySelectorAll('.education-item');
-    
-    certificationItems.forEach(item => {
-        const title = item.querySelector('h2').textContent;
-        const description = item.querySelector('p').textContent;
-        
-        // Extract organization and year from the title if possible
-        let organization = '';
-        let year = '';
-        
-        // Clear the item's content
-        item.innerHTML = '';
-        
-        // Create new structure
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = title;
-        item.appendChild(titleElement);
-        
-        // Add organization info
-        if (title.includes('JavaScript')) {
-            organization = 'FreeCodeCamp';
-            year = 'Present';
-        } else if (title.includes('Java')) {
-            organization = 'LinkedIn Learning';
-            year = '2024';
-        } else if (title.includes('HTML')) {
-            organization = 'LinkedIn Learning';
-            year = '2024';
-        } else if (title.includes('CSS')) {
-            organization = 'LinkedIn Learning';
-            year = '2024';
-        } else if (title.includes('Python')) {
-            organization = 'LinkedIn Learning';
-            year = '2025';
-        } 
-        else if (title.includes('Object-Oriented')) {
-            organization = 'LinkedIn Learning';
-            year = '2025';
-        } else if (title.includes('Web APIs')) {
-            organization = 'LinkedIn Learning';
-            year = '2025';
-        } else if (title.includes('Web Design')) {
-            organization = 'LinkedIn Learning';
-            year = '2024';
-        }
-        
-        const orgElement = document.createElement('div');
-        orgElement.className = 'org-info';
-        orgElement.textContent = organization;
-        item.appendChild(orgElement);
-        
-        const yearElement = document.createElement('div');
-        yearElement.className = 'year';
-        yearElement.textContent = year;
-        item.appendChild(yearElement);
-        
-        // Add description (hidden by default)
-        const descElement = document.createElement('p');
-        descElement.textContent = description;
-        item.appendChild(descElement);
-        
-        // Add tags based on the certification content
-        const tagContainer = document.createElement('div');
-        tagContainer.className = 'tag-container';
-        
-        // Add relevant tags based on title
-        const tags = [];
-        if (title.includes('Algorithms')) {
-            tags.push('JavaScript', 'Programming', 'Alogrithms and Data Structures'); 
-        } else if (title.includes('Java')) {
-            tags.push('Java', 'Programming');
-        } else if (title.includes('Object-Oriented')) {
-            tags.push('OOP', 'Design', 'Programming');
-        } else if (title.includes('Web APIs')) {
-            tags.push('API', 'Web Development', 'REST');
-        } else if (title.includes('Web Design')) {
-            tags.push('HTML', 'CSS', 'Web Design');
-        }
-        
-        tags.forEach(tag => {
-            const tagElement = document.createElement('span');
-            tagElement.className = 'tag';
-            tagElement.textContent = tag;
-            tagContainer.appendChild(tagElement);
+            if (window.innerWidth <= 991) {
+                navbar.classList.remove('active');
+            }
         });
-        
-        item.appendChild(tagContainer);
     });
-}
 
-// Call the certification setup when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+    // Add active class to navbar links based on scroll position
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY + 100;
+        const sections = Array.from(navbarLinks)
+            .map(link => {
+                const sectionId = link.getAttribute('href');
+                if (sectionId.startsWith('#')) {
+                    const section = document.querySelector(sectionId);
+                    return section ? {
+                        id: sectionId,
+                        top: section.offsetTop,
+                        bottom: section.offsetTop + section.offsetHeight
+                    } : null;
+                }
+                return null;
+            })
+            .filter(section => section);
+
+        sections.sort((a, b) => a.top - b.top);
+        navbarLinks.forEach(link => link.classList.remove('active'));
+
+        let activeSection = sections.find(section => scrollPosition >= section.top - 200) || { id: '#home' };
+        document.querySelector(`.navbar a[href="${activeSection.id}"]`).classList.add('active');
+    });
+
+    // Parse certification data
+    function parseCertificationData() {
+        const certificationItems = document.querySelectorAll('.education-item');
+        if (!certificationItems.length) return;
+
+        certificationItems.forEach(item => {
+            const titleElement = item.querySelector('h2');
+            const descriptionElement = item.querySelector('p');
+            if (!titleElement || !descriptionElement) return;
+
+            const title = titleElement.textContent;
+            const description = descriptionElement.textContent;
+
+            // Clear the item's content
+            item.innerHTML = '';
+
+            // Create new structure
+            const newTitleElement = document.createElement('h2');
+            newTitleElement.textContent = title;
+            item.appendChild(newTitleElement);
+
+            // Add organization and year
+            const certData = {
+                'JavaScript Algorithms and Data Structures': { org: 'freeCodeCamp', year: 'Present' },
+                'Programming Foundations: Object-Oriented Design': { org: 'LinkedIn Learning', year: '2025' },
+                'Introduction to Web APIs': { org: 'LinkedIn Learning', year: '2025' },
+                'Agile Foundations': { org: 'LinkedIn Learning', year: '2025' },
+                'Learning SQL Programming': { org: 'LinkedIn Learning', year: '2025' },
+                'Project Management Skills for Leaders': { org: 'LinkedIn Learning', year: '2025' },
+                'Learning Java 11': { org: 'LinkedIn Learning', year: '2024' },
+                'Introduction to Web Design and Development': { org: 'LinkedIn Learning', year: '2024' }
+            };
+
+            const { org = 'Unknown', year = 'Unknown' } = certData[title] || {};
+
+            const orgElement = document.createElement('div');
+            orgElement.className = 'org-info';
+            orgElement.textContent = org;
+            item.appendChild(orgElement);
+
+            const yearElement = document.createElement('div');
+            yearElement.className = 'year';
+            yearElement.textContent = year;
+            item.appendChild(yearElement);
+
+            // Add description (hidden by default)
+            const descElement = document.createElement('p');
+            descElement.textContent = description;
+            item.appendChild(descElement);
+
+            // Add tags
+            const tagContainer = document.createElement('div');
+            tagContainer.className = 'tag-container';
+
+            const tagData = {
+                'JavaScript Algorithms and Data Structures': ['JavaScript', 'Programming', 'Algorithms', 'Data Structures'],
+                'Programming Foundations: Object-Oriented Design': ['OOP', 'Design', 'Programming'],
+                'Introduction to Web APIs': ['API', 'Web Development', 'REST'],
+                'Agile Foundations': ['Agile', 'Project Management'],
+                'Learning SQL Programming': ['SQL', 'Database', 'Programming'],
+                'Project Management Skills for Leaders': ['Project Management', 'Leadership'],
+                'Learning Java 11': ['Java', 'Programming'],
+                'Introduction to Web Design and Development': ['HTML', 'CSS', 'JavaScript', 'Web Design']
+            };
+
+            (tagData[title] || ['Certification']).forEach(tag => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+                tagContainer.appendChild(tagElement);
+            });
+
+            item.appendChild(tagContainer);
+        });
+
+        // Add click event to certification items
+        certificationItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const description = item.querySelector('p');
+                if (description) {
+                    description.style.display = description.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    }
+
+    // Initialize
     parseCertificationData();
-    
-    // Add click event to certification items
-    const certItems = document.querySelectorAll('.education-item');
-    certItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const description = this.querySelector('p');
-            description.style.display = description.style.display === 'block' ? 'none' : 'block';
-        });
-    });
+    scrollToTop(); // Set initial active state
 });
